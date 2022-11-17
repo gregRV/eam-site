@@ -5,9 +5,9 @@
   "author": "Greg Varias <gregvarias@gmail.com>",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "gatsby": "^1.9.247",
+    "gatsby": "^5.0.1",
     "gatsby-link": "^1.6.40",
-    "gatsby-plugin-less": "^1.1.8",
+    "gatsby-plugin-less": "^7.0.0",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.18",
     "react-helmet": "^5.2.0"
