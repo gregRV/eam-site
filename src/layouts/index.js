@@ -14,15 +14,13 @@ const Layout = ({ children, data }) => {
     TagManager.initialize({
       gtmId: 'GTM-MPBSVMVR',
     })
-  }, []);
-  function handleGoogleTagClick() {
     TagManager.dataLayer({
       dataLayer: {
         event: 'button_click',
-        buttonName: 'Example Button',
+        buttonName: 'Test Event',
       },
     });
-  }
+  }, []);
   return <div className={styles.mainContainer}>
     <Helmet
       title='Empire Asset Management'
@@ -32,7 +30,6 @@ const Layout = ({ children, data }) => {
       <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js' />
     </Helmet>
     <div className={styles.mainContent}>
-      <button onClick={handleGoogleTagClick}>Test Button GoogleTag Click me</button>
       <Header siteTitle='Empire Asset Management' />
       {children()}
     </div>
