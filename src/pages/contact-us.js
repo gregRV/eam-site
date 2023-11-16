@@ -50,7 +50,7 @@ class ContactUs extends Component {
       emailInput: ''
     })
   }
-
+  
   render () {
     const { isEmailValid, emailInput } = this.state
 

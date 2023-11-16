@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect }  from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
@@ -21,6 +21,7 @@ const Layout = ({ children, data }) => {
       },
     });
   }, []);
+  
   return <div className={styles.mainContainer}>
     <Helmet
       title='Empire Asset Management'
