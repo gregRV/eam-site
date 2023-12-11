@@ -1,0 +1,71 @@
+.postContainer {
+  height: 100%;
+  width: 100%;
+
+  // handles 100% height for FF/IE
+  display: inline-block;
+
+  // target img in Banner
+  > :first-child {
+    > :first-child {
+      > img {
+        min-height: 240px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  h2 {
+    text-transform: capitalize;
+  }
+
+  .section {
+    max-width: 588px;
+    margin: 48px auto;
+    padding: 0 24px;
+
+    label {
+      display: block;
+      text-transform: uppercase;
+      color: #333A54;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    p {
+      margin: 24px 0;
+    }
+
+    .post {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: whitesmoke;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 30px 30px 10px 30px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .postContainer {
+    margin-bottom: 24px;
+
+    // target banner
+    >:first-child {
+      >:first-child {
+        >img {
+          min-height: 0px;
+          height: 96px;
+        }
+      }
+    }
+
+    .section {
+      max-width: 432px;
+      margin: 24px auto;
+    }
+  }
+}

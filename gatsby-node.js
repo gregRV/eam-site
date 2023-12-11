@@ -5,3 +5,16 @@
  */
 
  // You can delete this file if you're not using it
+
+ exports.createPages = async function ({ boundActionCreators }){
+  const { createPage } = boundActionCreators;
+
+  const posts = await fetch(`${process.env.REACT_APP_REST_API_URL}/api/post`).then(res => res.json());
+  return posts.data.forEach(post => {
+    createPage({
+      path: `/blog/${post._id}`,
+      component: require.resolve('./src/pages/post.js'),
+      context: { data: post }
+    });
+  });
+ }
