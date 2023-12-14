@@ -9,23 +9,30 @@ import banner1 from '../../assets/images/account-login/mfg-account_login-min-1.p
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const Post = ({ post }) => {
+const Post = () => {
   const [data, setData] = useState();
-  console.log('Post', post);
+  const [cover, setCover] = useState();
 
   useEffect(() => {
     const chunks = window.location.pathname.split('/');
-    console.log("Chunks", chunks);
 
     fetch(`${process.env.REACT_APP_REST_API_URL}/api/post/${chunks[2]}`)
     .then(response => response.json())
-    .then(json => setData(json.data[0]));
+    .then(json => {
+      const data = json.data && json.data.length > 0 ? json.data[0] : {};
+      setData(data);
+      if(data.cover && data.cover !== '' && data.cover !==null){
+        const cover = `${process.env.REACT_APP_REST_API_URL}/uploads/${data.cover}`;
+        setCover(cover);
+      }
+    });
   }, [window.location.pathname]);
 
   return (
     <div className={styles.postContainer}>
       <Banner src={banner1} />
       <div className={styles.section}>
+        {cover && <img src={cover} alt="cover" />}
         <h2>{data ? data.title : ''}</h2>
         <p>
           {data ? data.short_description : ''}
