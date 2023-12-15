@@ -3,7 +3,7 @@ import Banner from '../components/Images/Banner/Banner';
 // import axios from 'axios'
 
 import styles from './post.module.less';
-import DOMPurify from 'isomorphic-dompurify';
+// import sanitizeHtml from 'sanitize-html';
 
 import banner1 from '../../assets/images/account-login/mfg-account_login-min-1.png';
 import { useState } from 'react';
@@ -26,7 +26,7 @@ const Post = () => {
         setCover(cover);
       }
     });
-  }, [window.location.pathname]);
+  }, []);
 
   return (
     <div className={styles.postContainer}>
@@ -38,7 +38,7 @@ const Post = () => {
           {data ? data.short_description : ''}
         </p>
         <div dangerouslySetInnerHTML={{
-                __html: data ? DOMPurify.sanitize(data.body) : '',
+                __html: data ? data.body : '',
               }}></div>
       </div>
     </div>
