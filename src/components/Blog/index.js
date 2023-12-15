@@ -12,7 +12,7 @@ const BlogPosts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_REST_API_URL}/api/post`)
+    fetch(`https://coral-app-fujcj.ondigitalocean.app/api/post`)
       .then(response => response.json())
       .then(json => setPosts(json.data));
   }, []);
@@ -31,7 +31,7 @@ const BlogPosts = () => {
         <div className={styles.postContainer}>
           {posts.map(post => (
           <div className={styles.post} key={post._id} onClick={() => onPostClick(post._id)}>
-            {post.cover && <img src={`${process.env.REACT_APP_REST_API_URL}/uploads/${post.cover}`} alt="cover" />}
+            {post.cover && <img src={`https://coral-app-fujcj.ondigitalocean.app/uploads/${post.cover}`} alt="cover" />}
             <div className={styles.content}>
             <h1>{post.title}</h1>
             <p>{post.short_description}</p>

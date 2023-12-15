@@ -16,13 +16,13 @@ const Post = () => {
   useEffect(() => {
     const chunks = window.location.pathname.split('/');
 
-    fetch(`${process.env.REACT_APP_REST_API_URL}/api/post/${chunks[2]}`)
+    fetch(`https://coral-app-fujcj.ondigitalocean.app/api/post/${chunks[2]}`)
     .then(response => response.json())
     .then(json => {
       const data = json.data && json.data.length > 0 ? json.data[0] : {};
       setData(data);
       if(data.cover && data.cover !== '' && data.cover !==null){
-        const cover = `${process.env.REACT_APP_REST_API_URL}/uploads/${data.cover}`;
+        const cover = `https://coral-app-fujcj.ondigitalocean.app/uploads/${data.cover}`;
         setCover(cover);
       }
     });
