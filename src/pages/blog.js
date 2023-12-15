@@ -10,6 +10,7 @@ const Blog = () => {
       <Router basepath="/blog">
         <Post path="/:id" />
         <BlogPosts path="/" />
+        <BlogPosts default />
       </Router>
   </div>);
 }
