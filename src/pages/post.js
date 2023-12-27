@@ -12,6 +12,11 @@ import { useEffect } from 'react';
 const Post = () => {
   const [data, setData] = useState();
   const [cover, setCover] = useState();
+  const [error, setError] = useState(false);
+
+  const onError = () => {
+    setError(true);
+  };
 
   useEffect(() => {
     const chunks = window.location.pathname.split('/');
@@ -32,7 +37,7 @@ const Post = () => {
     <div className={styles.postContainer}>
       <Banner src={banner1} />
       <div className={styles.section}>
-        {cover && <img src={cover} alt="cover" />}
+        {!error && <img src={cover} alt="cover" onError={onError} />}
         <h2>{data ? data.title : ''}</h2>
         <p>
           {data ? data.short_description : ''}

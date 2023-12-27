@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Banner from '../Images/Banner/Banner'
+import BlogListCover from './blogListCover';
 // import axios from 'axios'
 // import { navigate } from "gatsby";
 
@@ -31,7 +32,7 @@ const BlogPosts = () => {
         <div className={styles.postContainer}>
           {posts.map(post => (
           <div className={styles.post} key={post._id} onClick={() => onPostClick(post._id)}>
-            {post.cover && <img src={`https://coral-app-fujcj.ondigitalocean.app/uploads/${post.cover}`} alt="cover" />}
+            <BlogListCover cover={post.cover}/>
             <div className={styles.content}>
             <h1>{post.title}</h1>
             <p>{post.short_description}</p>
