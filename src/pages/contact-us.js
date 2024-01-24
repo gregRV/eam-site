@@ -131,7 +131,7 @@ class ContactUs extends Component {
                 </div>
                 <div>
                   <label>Email:</label>
-                  <p><a href='mailto:info@empiream.com,stephen@revenueinstitute.com'>info@empiream.com</a></p>
+                  <p><a href='mailto:info@empiream.com'>info@empiream.com</a></p>
                 </div>
               </div>
             </div>
