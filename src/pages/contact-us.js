@@ -69,8 +69,10 @@ class ContactUs extends Component {
               data-netlify='true'
               data-netlify-recaptcha='true'
               action='/success-contact-us'
+              netlify-honeypot="bot-field"
             >
               <div className={styles.section}>
+                <input type="hidden" name="form-name" value="contact" />
                 <div className={styles.field}>
                   <label htmlFor='name'>Full Name</label>
                   <input id='name' name='name' type='text' />
