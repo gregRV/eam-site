@@ -9,7 +9,7 @@ const ThankYouMessage = () => (
   <div default>
     <Banner src={banner1} />
     <div className={styles.section}>
-      <h2>Thank you for submission</h2>
+      <h2 className={styles.submission}>Thank you for submission</h2>
     </div>
   </div>
 

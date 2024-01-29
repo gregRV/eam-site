@@ -1,44 +1,26 @@
-.blogContainer {
-  height: 100%;
-  width: 100%;
+.section {
+  max-width: 800px;
+  margin: 48px auto;
+  padding: 20px 24px;
+  text-align: center;
 
-  // handles 100% height for FF/IE
-  display: inline-block;
-
-  // target img in Banner
-  > :first-child {
-    > :first-child {
-      > img {
-        min-height: 240px;
-        object-fit: cover;
-      }
-    }
-  }
-
-  h2 {
-    text-transform: capitalize;
-  }
-
-  .section {
-    max-width: 800px;
-    margin: 48px auto;
-    padding: 20px 24px;
-    text-align: center;
-
-    label {
-      display: block;
-      text-transform: uppercase;
-      color: #333A54;
-      font-size: 12px;
-      font-weight: 600;
-      line-height: 24px;
-    }
+  label {
+    display: block;
+    text-transform: uppercase;
+    color: #333A54;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 24px;
   }
 }
 
+.submission {
+  padding: 20px 24px;
+}
+
 @media (max-width: 480px) {
-    .section {
-      max-width: 432px;
-      margin: 24px auto;
-    }
+  .section {
+    max-width: 432px;
+    margin: 24px auto;
   }
+}
