@@ -68,6 +68,7 @@ class ContactUs extends Component {
               method='POST'
               data-netlify='true'
               data-netlify-recaptcha='true'
+              action='/contact-us'
             >
               <div className={styles.section}>
                 <div className={styles.field}>
