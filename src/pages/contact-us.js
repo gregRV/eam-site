@@ -4,6 +4,7 @@ import Banner from '../components/Images/Banner/Banner'
 import banner1 from '../../assets/images/contact-us/mfg-contact_us-min.png'
 
 import styles from './contact-us.module.less'
+import { navigateTo } from 'gatsby-link'
 
 // email field validation
 const VALID_EMAIL_PATTERN = /(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\w$)/
@@ -12,7 +13,7 @@ const isValidEmail = value => {
 }
 
 class ContactUs extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       isEmailValid: false,
@@ -23,7 +24,7 @@ class ContactUs extends Component {
     this.handleReset = this.handleReset.bind(this)
   }
 
-  handleChange (e) {
+  handleChange(e) {
     const emailInput = e.target.value
 
     if (isValidEmail(emailInput)) {
@@ -40,7 +41,7 @@ class ContactUs extends Component {
   }
 
   // not working in IE11, perhaps with 'onClick' polyfill?
-  handleReset (e) {
+  handleReset(e) {
     e.preventDefault()
 
     document.getElementById('contact-form-v2').reset()
@@ -50,8 +51,24 @@ class ContactUs extends Component {
       emailInput: ''
     })
   }
-  
-  render () {
+
+  handleFormSubmission(e) {
+    e.preventDefault();
+    let myForm = document.getElementById('contact-form-v2');
+    let formData = new FormData(myForm);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        console.log('Form Submitted');
+        navigateTo('/success-contact-us');
+      })
+      .catch(() => {});
+  }
+
+  render() {
     const { isEmailValid, emailInput } = this.state
 
     return (
@@ -68,7 +85,6 @@ class ContactUs extends Component {
               method='POST'
               data-netlify='true'
               data-netlify-recaptcha='true'
-              action='/success-contact-us'
               netlify-honeypot="bot-field"
             >
               <div className={styles.section}>
@@ -106,6 +122,7 @@ class ContactUs extends Component {
                     type='submit'
                     disabled={!isEmailValid}
                     title='Please submit with a valid email address'
+                    onClick={this.handleFormSubmission}
                   >
                     Submit
                   </button>
