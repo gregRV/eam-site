@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Router } from "@reach/router"
 import Banner from '../components/Images/Banner/Banner'
 
@@ -15,12 +15,17 @@ const ThankYouMessage = () => (
 
 );
 
-const SuccessContactUs = () => {
-  return (<div>
-    <Router basepath="/success-contact-us">
-      <ThankYouMessage path="/" />
-    </Router>
-  </div >);
+class SuccessContactUs extends Component {
+
+  render() {
+    return (
+      <div>
+        <Router basepath="/success-contact-us">
+          <ThankYouMessage path="/" />
+        </Router>
+      </div >
+    )
+  }
 }
 
 export default SuccessContactUs
