@@ -14,7 +14,7 @@ const BlogListCover = ({ cover }) => {
 
     return (
         <div>
-            {!error && <img src={`https://coral-app-fujcj.ondigitalocean.app/uploads/${cover}`} alt="cover" onError={onError} />}
+            {!error && <img src={`https://eam-dashboard-api-eqcg4.ondigitalocean.app/uploads/${cover}`} alt="cover" onError={onError} />}
         </div>
     );
 }

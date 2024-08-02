@@ -13,7 +13,7 @@ const BlogPosts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://coral-app-fujcj.ondigitalocean.app/api/post`)
+    fetch(`https://eam-dashboard-api-eqcg4.ondigitalocean.app/api/post`)
       .then(response => response.json())
       .then(json => setPosts(json.data));
   }, []);

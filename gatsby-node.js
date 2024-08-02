@@ -9,7 +9,7 @@
  exports.createPages = async function ({ boundActionCreators }){
   const { createPage } = boundActionCreators;
 
-  const posts = await fetch(`https://coral-app-fujcj.ondigitalocean.app/api/post`).then(res => res.json());
+  const posts = await fetch(`https://eam-dashboard-api-eqcg4.ondigitalocean.app/api/post`).then(res => res.json());
   return posts.data.forEach(post => {
     createPage({
       path: `/blog/${post._id}`,
