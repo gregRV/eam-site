@@ -49,7 +49,7 @@ const AssetManagement = () => (
       <div className={styles.right}>
         <h4>Identifying Your Goals</h4>
         <div className={styles.section}>
-          <p>Our investment process begins with an analysis of your needs and goals.  A profile is developed that highlights your investment objectives, tolerance for risk and investment time horizon and then used as the foundation for a long-range investment strategy.  One established, we will work together with you to define an investment plan tailored to your specific situation.</p>
+          <p>Our investment process begins with an analysis of your needs and goals. A profile is developed that highlights your investment objectives, risk tolerance and investment time horizon. Once established, we will work together with you to define an investment plan tailored to your specific situation.</p>
         </div>
         <div className={styles.section}>
           <h4>Developing Your Investment Strategy</h4>
