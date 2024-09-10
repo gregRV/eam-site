@@ -47,7 +47,7 @@ const AboutEmpire = () => (
       <div className={styles.right}>
         <div className={styles.section}>
           <h4>Capabilities</h4>
-          <p>Empire offers comprehensive brokerage solutions to support both private and institutional investors with our non-conflicted trading and execution services. As an asset manager we house a certified financial planning department, insurance department, retirement specialist and managed asset team. Our Private Client Service team help clients take advantage of alternative investment opportunities, with emphasis on risk management, global diversification, and customized portfolio modeling. Companies and institutions can reach a wider spectrum of investors through our investment banking expertise and capital market transactions, with particular strength in the medical and biotech industries.</p>
+          <p>Empire offers comprehensive brokerage solutions to support both private and institutional investors with our non-conflicted trading and execution services. As an asset manager we provide certified financial planning, insurance and retirement solutions. Our Private Client Service team help clients take advantage of alternative investment opportunities, with emphasis on risk management, global diversification, and customized portfolio modeling. Companies and institutions can reach a wider spectrum of investors through our investment banking expertise and capital market transactions.</p>
         </div>
       </div>
     </div>
